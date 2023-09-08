@@ -2,6 +2,7 @@ package main
 
 import (
 	example "expamle"
+	"expamle/server"
 	"fmt"
 	kitLog "github.com/go-kit/kit/log"
 	pg "gorm.io/driver/postgres"
@@ -28,7 +29,7 @@ func main() {
 	}
 
 	// connecting to postgres server
-	db, err := gorm.Open(pg.Open(config.DNS), &gorm.Config{SkipDefaultTransaction: true})
+	_, err = gorm.Open(pg.Open(config.DNS), &gorm.Config{SkipDefaultTransaction: true})
 	if err != nil {
 		log.Fatal(err)
 		return
