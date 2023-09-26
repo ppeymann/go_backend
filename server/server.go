@@ -103,7 +103,7 @@ func (s *Server) Listen() {
 		}
 	}()
 
-	// Listen for the interrupt signal.
+	// Listen for the interrupt signal.=
 	<-ctx.Done()
 
 	// Restore default behavior on the interrupt signal and notify user of shutdown.

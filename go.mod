@@ -14,6 +14,7 @@ require (
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
 	github.com/chenzhuoyu/iasm v0.9.0 // indirect
+	github.com/docker/docker v24.0.6+incompatible // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
 	github.com/gin-contrib/cors v1.4.0 // indirect
 	github.com/gin-contrib/secure v0.0.1 // indirect
