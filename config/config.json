@@ -10,6 +10,6 @@
     "ssl_host": "",
     "auth_mode": "paseto"
   },
-  "dsn": "host=postgres user=postgres password=RTWZB4Nkju4gByNJrkNwrWA6MdeQ6LTk dbname=postgres port=5432 sslmode=disable",
+  "dsn": "host=localhost user=postgres password=RTWZB4Nkju4gByNJrkNwrWA6MdeQ6LTk dbname=postgres port=5432 sslmode=disable",
   "database": "eg"
 }
