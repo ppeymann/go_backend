@@ -21,6 +21,8 @@ import (
 
 // Server holds the dependencies for an HTTP server.
 type Server struct {
+	account example.AccountService
+
 	Router        *gin.Engine
 	config        *example.Configuration
 	instrumenting serviceInstrumenting

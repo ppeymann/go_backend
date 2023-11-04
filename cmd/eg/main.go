@@ -2,6 +2,7 @@ package main
 
 import (
 	example "expamle"
+	"expamle/cmd/eg/services"
 	"expamle/server"
 	"fmt"
 	kitLog "github.com/go-kit/kit/log"
@@ -29,7 +30,7 @@ func main() {
 	}
 
 	// connecting to postgres server
-	_, err = gorm.Open(pg.Open(config.DNS), &gorm.Config{SkipDefaultTransaction: true})
+	db, err := gorm.Open(pg.Open(config.DNS), &gorm.Config{SkipDefaultTransaction: true})
 	if err != nil {
 		log.Fatal(err)
 		return
@@ -41,6 +42,9 @@ func main() {
 	logger = kitLog.NewLogfmtLogger(kitLog.NewSyncWriter(os.Stderr))
 	logger = kitLog.With(logger, "ts", kitLog.DefaultTimestampUTC)
 
+	// AccountService
+	account := services.InitAccountService(db, logger, config)
+
 	//////////////////////////////////////////////
 	// CreateMessage New Service With Given Components //
 	//////////////////////////////////////////////
@@ -49,6 +53,8 @@ func main() {
 
 	// Server instance
 	svr := server.NewServer(sl, config)
+
+	svr.InitAccountHandlers(account, config)
 
 	// Start listening for http requests
 	svr.Listen()
