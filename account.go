@@ -17,7 +17,7 @@ type (
 	// so any object that stratifying this interface can be used as account domain repository
 
 	AccountRepository interface {
-		//SignUp(input *SignUpInput)
+		Create(input *SignUpInput) (*AccountEntity, error)
 
 		BaseRepository
 	}
