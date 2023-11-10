@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SignUpInput",
+  "$protected": false,
+  "type": "object",
+  "properties": {
+    "mobile": {
+      "type": "string",
+      "pattern": "(^[+][1-9]{1,4}[0-9]{2,3}[0-9]{4,7}$)|^$"
+    },
+    "password": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "USER"
+      ]
+    }
+  },
+  "required": [
+    "mobile",
+    "password",
+    "role"
+  ]
+}

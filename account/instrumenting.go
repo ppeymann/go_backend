@@ -2,7 +2,9 @@ package account
 
 import (
 	example "expamle"
+	"github.com/gin-gonic/gin"
 	"github.com/go-kit/kit/metrics"
+	"time"
 )
 
 type instrumentingService struct {
@@ -17,4 +19,13 @@ func NewInstrumentingService(count metrics.Counter, latency metrics.Histogram, s
 		requestLatency: latency,
 		next:           service,
 	}
+}
+
+func (i *instrumentingService) SignUp(input *example.SignUpInput, ctx *gin.Context) *example.BaseResult {
+	defer func(begin time.Time) {
+		i.requestCount.With("method", "SignUp").Add(1)
+		i.requestLatency.With("method", "SignUp").Observe(time.Since(begin).Seconds())
+	}(time.Now())
+
+	return i.next.SignUp(input, ctx)
 }

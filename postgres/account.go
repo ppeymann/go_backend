@@ -72,7 +72,16 @@ func (r *accountRepository) Create(input *example.SignUpInput) (*example.Account
 
 }
 
+func (r *accountRepository) Update(input *example.AccountEntity) error {
+	return r.pg.Save(input).Error
+}
+
 func (r *accountRepository) Migrate() error {
+	err := r.pg.AutoMigrate(&example.RefreshTokenEntity{})
+	if err != nil {
+		return err
+	}
+
 	return r.pg.AutoMigrate(&example.AccountEntity{})
 }
 

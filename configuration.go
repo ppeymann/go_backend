@@ -69,11 +69,11 @@ type (
 		Secret        string `json:"secret"`
 		TokenExpire   int64  `json:"token_expire"`
 		RefreshExpire int64  `json:"refresh_expire"`
-		Issuer        string `json:"issuer"`
-		Audience      string `json:"audience"`
-		SubjectKey    string `json:"subject_key"`
-		IdentityKey   string `json:"identity_key"`
-		RoleKey       string `json:"role_key"`
+		//Issuer        string `json:"issuer"`
+		//Audience      string `json:"audience"`
+		//SubjectKey    string `json:"subject_key"`
+		//IdentityKey   string `json:"identity_key"`
+		//RoleKey       string `json:"role_key"`
 	}
 )
 

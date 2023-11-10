@@ -1,6 +1,7 @@
 package example
 
 import (
+	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
 	"gorm.io/gorm"
 	"time"
@@ -10,7 +11,7 @@ type (
 	// AccountService represents method signatures for api account endpoint.
 	// so any object that stratifying this interface can be used as account service for api endpoint.
 	AccountService interface {
-		//SignUp(input *SignUpInput, ctx *gin.Context) *BaseResult
+		SignUp(input *SignUpInput, ctx *gin.Context) *BaseResult
 	}
 
 	// AccountRepository represents method signatures for account domain repository.
@@ -18,6 +19,7 @@ type (
 
 	AccountRepository interface {
 		Create(input *SignUpInput) (*AccountEntity, error)
+		Update(input *AccountEntity) error
 
 		BaseRepository
 	}

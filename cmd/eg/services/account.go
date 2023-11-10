@@ -20,7 +20,7 @@ func InitAccountService(db *gorm.DB, logger kitLog.Logger, config *example.Confi
 		log.Panicln(err)
 	}
 
-	service := account.NewService(accountRepo)
+	service := account.NewService(accountRepo, config)
 
 	path := getSchemaPath("account")
 
