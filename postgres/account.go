@@ -77,12 +77,12 @@ func (r *accountRepository) Update(input *example.AccountEntity) error {
 }
 
 func (r *accountRepository) Migrate() error {
-	err := r.pg.AutoMigrate(&example.RefreshTokenEntity{})
+	err := r.pg.AutoMigrate(&example.AccountEntity{})
 	if err != nil {
 		return err
 	}
 
-	return r.pg.AutoMigrate(&example.AccountEntity{})
+	return r.pg.AutoMigrate(&example.RefreshTokenEntity{})
 }
 
 func (r *accountRepository) Name() string {

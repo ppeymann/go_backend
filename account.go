@@ -37,11 +37,11 @@ type (
 	//
 	// swagger:model AccountEntity
 	AccountEntity struct {
-		gorm.Model
+		gorm.Model `swaggerignore:"true"`
 
 		Mobile    string               `json:"mobile" gorm:"mobile"`
 		Password  string               `json:"password" gorm:"password"`
-		Role      pq.StringArray       `json:"role"`
+		Role      pq.StringArray       `json:"role" gorm:"type:varchar(64)[]"`
 		Email     string               `json:"email" gorm:"email"`
 		UserName  string               `json:"user_name" gorm:"user_name"`
 		Suspended bool                 `json:"suspended" gorm:"suspended"`

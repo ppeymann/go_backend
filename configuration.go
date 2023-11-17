@@ -24,7 +24,7 @@ type (
 		Listener Listener `json:"listener"`
 
 		// DNS database connection string
-		DNS string `json:"dns"`
+		DNS string `json:"dsn"`
 
 		// Database is primary name of database
 		// default is go_example
@@ -40,7 +40,7 @@ type (
 
 		// Port is network port for bind Server http listener to it.
 		// default is 8080
-		Port string `json:"port" mapstructure:"port"`
+		Port int `json:"port" mapstructure:"port"`
 
 		// Cert is path to TLS certificate file.
 		// if Cert is not specified, Server listener runs without TLS.
@@ -69,11 +69,6 @@ type (
 		Secret        string `json:"secret"`
 		TokenExpire   int64  `json:"token_expire"`
 		RefreshExpire int64  `json:"refresh_expire"`
-		//Issuer        string `json:"issuer"`
-		//Audience      string `json:"audience"`
-		//SubjectKey    string `json:"subject_key"`
-		//IdentityKey   string `json:"identity_key"`
-		//RoleKey       string `json:"role_key"`
 	}
 )
 
@@ -81,7 +76,7 @@ type (
 func NewConfiguration(secret string) (*Configuration, error) {
 	conf := &Configuration{}
 
-	err := conf.loadfile()
+	err := conf.loadConfig()
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +89,7 @@ func NewConfiguration(secret string) (*Configuration, error) {
 
 }
 
-func (c *Configuration) loadfile() error {
+func (c *Configuration) loadConfig() error {
 	path := ""
 	if runtime.GOOS == "windows" {
 		path = ".\\config\\config.json"
@@ -109,12 +104,12 @@ func (c *Configuration) loadfile() error {
 
 	defer closeFile(file)
 
-	byte, err := ioutil.ReadAll(file)
+	bytes, err := ioutil.ReadAll(file)
 	if err != nil {
 		return err
 	}
 
-	err = json.Unmarshal(byte, c)
+	err = json.Unmarshal(bytes, c)
 	if err != nil {
 		return err
 	}

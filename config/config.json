@@ -1,21 +1,21 @@
 {
   "listener": {
     "host": "0.0.0.0",
-    "port": "8080",
+    "port": 8080,
     "cert": "",
     "key": "",
     "allowed_hosts": [
       "*"
     ],
     "ssl_host": "",
+    "sessions_secret": "",
     "auth_mode": "paseto"
   },
   "dsn": "host=localhost user=postgres password=RTWZB4Nkju4gByNJrkNwrWA6MdeQ6LTk dbname=postgres port=5432 sslmode=disable",
   "database": "eg",
-
   "jwt": {
-    "secret": "1Q3UlrECBUaRAh43Pivtgx0763hP9St",
+    "secret": "HOLEgMA7WuJg6XCAc2lgeHOJmOokC1cw",
     "token_expire": 43200,
-    "refresh_expire":86400,
+    "refresh_expire":86400
   }
 }

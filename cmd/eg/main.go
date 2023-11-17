@@ -30,7 +30,7 @@ func main() {
 	}
 
 	// connecting to postgres server
-	db, err := gorm.Open(pg.Open(config.DNS), &gorm.Config{SkipDefaultTransaction: true})
+	db, err := gorm.Open(pg.Open(config.DNS), &gorm.Config{SkipDefaultTransaction: false})
 	if err != nil {
 		log.Fatal(err)
 		return
