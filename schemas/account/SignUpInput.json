@@ -5,8 +5,7 @@
   "type": "object",
   "properties": {
     "mobile": {
-      "type": "string",
-      "pattern": "(^[+][1-9]{1,4}[0-9]{2,3}[0-9]{4,7}$)|^$"
+      "type": "string"
     },
     "password": {
       "type": "string"

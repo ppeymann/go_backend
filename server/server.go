@@ -28,7 +28,7 @@ type Server struct {
 	instrumenting serviceInstrumenting
 
 	paseto authorization.TokenMaker
-	logger kitLog.Logger
+	Logger kitLog.Logger
 }
 
 // EnvMode specified the running env 'release' represents production mode and ” represents development.
@@ -37,7 +37,7 @@ var EnvMode = ""
 
 func NewServer(logger kitLog.Logger, config *example.Configuration) *Server {
 	svr := &Server{
-		logger:        logger,
+		Logger:        logger,
 		config:        config,
 		instrumenting: newServiceInstrumenting(),
 	}

@@ -54,7 +54,7 @@ func (r *accountRepository) Create(input *example.SignUpInput) (*example.Account
 	}
 
 	err := r.pg.Transaction(func(tx *gorm.DB) error {
-		if res := r.Model().Create(account).Error; res.Error != nil {
+		if res := r.Model().Create(account).Error; res != nil {
 			str := res.(*pgconn.PgError).Message
 			if strings.Contains(str, "duplicate key value") {
 				return res

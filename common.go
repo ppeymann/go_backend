@@ -50,7 +50,7 @@ const (
 	ContextUserKey           string = "CONTEXT_USER"
 	UserSessionKey           string = "USER_SESSION"
 	AuthorizationFailed      string = "authorization failed"
-	ProvidedRequiredJsonBody string = "please provided required JSOn body"
+	ProvidedRequiredJsonBody string = "please provided required JSON body"
 )
 
 const (

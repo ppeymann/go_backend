@@ -2,8 +2,8 @@ package server
 
 import (
 	example "expamle"
+	"fmt"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 type accountHandler struct {
@@ -28,11 +28,9 @@ func (s *Server) InitAccountHandlers(svc example.AccountService, config *example
 func (h *accountHandler) SignUp(ctx *gin.Context) {
 	input := &example.SignUpInput{}
 
-	if err := ctx.ShouldBindJSON(input); err != nil {
-		ctx.JSON(http.StatusBadRequest, example.BaseResult{
-			Errors: []string{example.ProvidedRequiredJsonBody},
-		})
-	}
+	err := ctx.ShouldBindJSON(input)
+
+	fmt.Println(err)
 
 	result := h.service.SignUp(input, ctx)
 	ctx.JSON(result.Status, result)
