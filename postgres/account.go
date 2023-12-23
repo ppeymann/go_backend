@@ -1,6 +1,7 @@
 package postgres
 
 import (
+	"errors"
 	example "expamle"
 	"expamle/env"
 	"expamle/utils"
@@ -57,10 +58,10 @@ func (r *accountRepository) Create(input *example.SignUpInput) (*example.Account
 		if res := r.Model().Create(account).Error; res != nil {
 			str := res.(*pgconn.PgError).Message
 			if strings.Contains(str, "duplicate key value") {
-				return res
+				return errors.New("account with specified param already exist")
 			}
+			return res
 		}
-
 		return nil
 	})
 

@@ -70,6 +70,16 @@ type (
 		TokenExpire   int64  `json:"token_expire"`
 		RefreshExpire int64  `json:"refresh_expire"`
 	}
+
+	// StorageOptions contains file storage upload/download option.
+	StorageOption struct {
+		MaxSize int64  `json:"max_size"`
+		MinSize int64  `json:"min_size"`
+		Host    string `json:"host"`
+		User    string `json:"user"`
+		Secret  string `json:"secret"`
+		Region  string `json:"region"`
+	}
 )
 
 // NewConfiguration returns new Configuration with default options.
