@@ -45,6 +45,9 @@ func main() {
 	// AccountService
 	account := services.InitAccountService(db, logger, config)
 
+	// StorageService
+	storage := services.InitStorageService(db, logger, config)
+
 	//////////////////////////////////////////////
 	// CreateMessage New Service With Given Components //
 	//////////////////////////////////////////////
@@ -54,7 +57,11 @@ func main() {
 	// Server instance
 	svr := server.NewServer(sl, config)
 
+	// Inject AccountService to Server Instance
 	svr.InitAccountHandlers(account, config)
+
+	// Inject StorageService to server Instance
+	svr.InitStorageHandlers(storage, config)
 
 	// Start listening for http requests
 	svr.Listen()

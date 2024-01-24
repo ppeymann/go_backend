@@ -19,6 +19,8 @@ type (
 	// so any object that stratifying this interface can be used as storage service domain repository
 	StorageRepository interface {
 		PutObject(bucketName, objectName, path, ct, ext string, tag ObjectTag) (*BaseResult, error)
+
+		BaseRepository
 	}
 
 	// UploadInput is DTO for transferring file upload request params.

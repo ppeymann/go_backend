@@ -31,6 +31,9 @@ type (
 		Database string `json:"database"`
 
 		JWT JWT `json:"jwt"`
+
+		// Storage server options.
+		Storage StorageOption `json:"storage"`
 	}
 
 	Listener struct {
@@ -71,7 +74,7 @@ type (
 		RefreshExpire int64  `json:"refresh_expire"`
 	}
 
-	// StorageOptions contains file storage upload/download option.
+	// StorageOption contains file storage upload/download option.
 	StorageOption struct {
 		MaxSize int64  `json:"max_size"`
 		MinSize int64  `json:"min_size"`
