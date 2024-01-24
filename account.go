@@ -21,8 +21,6 @@ type (
 	AccountRepository interface {
 		Create(input *SignUpInput) (*AccountEntity, error)
 		Update(input *AccountEntity) error
-		//FindByMobile()
-
 		BaseRepository
 	}
 
