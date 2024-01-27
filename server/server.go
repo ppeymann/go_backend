@@ -2,21 +2,22 @@ package server
 
 import (
 	"context"
-	example "expamle"
-	"expamle/authorization"
-	"expamle/env"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	kitLog "github.com/go-kit/kit/log"
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
-	"github.com/swaggo/swag/example/basic/docs"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	kitLog "github.com/go-kit/kit/log"
+	example "github.com/ppeymann/go_backend"
+	"github.com/ppeymann/go_backend/authorization"
+	"github.com/ppeymann/go_backend/env"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/swag/example/basic/docs"
 )
 
 // Server holds the dependencies for an HTTP server.

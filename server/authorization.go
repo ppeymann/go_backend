@@ -2,13 +2,14 @@ package server
 
 import (
 	"errors"
-	"expamle/utils"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/thoas/go-funk"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/ppeymann/go_backend/utils"
+	"github.com/thoas/go-funk"
 )
 
 // Authenticate is authentication and Authenticate middleware for http request

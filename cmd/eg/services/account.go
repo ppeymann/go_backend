@@ -1,14 +1,15 @@
 package services
 
 import (
-	example "expamle"
-	"expamle/account"
-	"expamle/postgres"
+	"log"
+
 	kitLog "github.com/go-kit/kit/log"
 	kitprometheus "github.com/go-kit/kit/metrics/prometheus"
+	example "github.com/ppeymann/go_backend"
+	"github.com/ppeymann/go_backend/account"
+	"github.com/ppeymann/go_backend/postgres"
 	stdprometheus "github.com/prometheus/client_golang/prometheus"
 	"gorm.io/gorm"
-	"log"
 )
 
 func InitAccountService(db *gorm.DB, logger kitLog.Logger, config *example.Configuration) example.AccountService {

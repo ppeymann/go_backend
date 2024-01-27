@@ -1,11 +1,11 @@
 package main
 
 import (
-	example "expamle"
-	"expamle/cmd/eg/services"
-	"expamle/server"
 	"fmt"
 	kitLog "github.com/go-kit/kit/log"
+	"github.com/ppeymann/go_backend"
+	"github.com/ppeymann/go_backend/cmd/eg/services"
+	"github.com/ppeymann/go_backend/server"
 	pg "gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"log"

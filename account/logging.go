@@ -1,11 +1,12 @@
 package account
 
 import (
-	example "expamle"
-	"github.com/gin-gonic/gin"
-	"github.com/go-kit/log"
 	"strings"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/go-kit/log"
+	example "github.com/ppeymann/go_backend"
 )
 
 type loggingService struct {

@@ -1,9 +1,10 @@
 package storage
 
 import (
-	example "expamle"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	example "github.com/ppeymann/go_backend"
 )
 
 type (

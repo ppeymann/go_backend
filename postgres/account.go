@@ -2,10 +2,10 @@ package postgres
 
 import (
 	"errors"
-	example "expamle"
-	"expamle/env"
-	"expamle/utils"
 	"github.com/jackc/pgx/v5/pgconn"
+	"github.com/ppeymann/go_backend"
+	"github.com/ppeymann/go_backend/env"
+	"github.com/ppeymann/go_backend/utils"
 	"gorm.io/gorm"
 	"strings"
 )

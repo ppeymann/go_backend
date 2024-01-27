@@ -1,14 +1,15 @@
 package storage
 
 import (
-	example "expamle"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"io"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
+	example "github.com/ppeymann/go_backend"
 )
 
 type storageService struct {

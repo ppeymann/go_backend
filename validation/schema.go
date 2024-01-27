@@ -3,14 +3,15 @@ package validation
 import (
 	"encoding/json"
 	"errors"
-	example "expamle"
 	"fmt"
-	"github.com/xeipuuv/gojsonschema"
 	"net/http"
 	"os"
 	"path/filepath"
 	"reflect"
 	"strings"
+
+	example "github.com/ppeymann/go_backend"
+	"github.com/xeipuuv/gojsonschema"
 )
 
 const formatError string = "%s: is not in correct format or not provided."

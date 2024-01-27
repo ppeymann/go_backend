@@ -1,8 +1,8 @@
 package example
 
 import (
-	"expamle/authorization"
 	"github.com/gin-gonic/gin"
+	"github.com/ppeymann/go_backend/authorization"
 	"gorm.io/gorm"
 )
 

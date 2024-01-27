@@ -1,12 +1,14 @@
 package account
 
 import (
-	example "expamle"
-	"expamle/authorization"
-	"github.com/gin-gonic/gin"
-	"github.com/segmentio/ksuid"
 	"net/http"
 	"time"
+
+	example "github.com/ppeymann/go_backend"
+
+	"github.com/gin-gonic/gin"
+	"github.com/ppeymann/go_backend/authorization"
+	"github.com/segmentio/ksuid"
 )
 
 type service struct {

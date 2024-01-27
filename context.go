@@ -2,7 +2,9 @@ package example
 
 import (
 	"errors"
-	"expamle/authorization"
+
+	"github.com/ppeymann/go_backend/authorization"
+
 	"github.com/gin-gonic/gin"
 )
 

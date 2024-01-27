@@ -1,10 +1,11 @@
 package account
 
 import (
-	example "expamle"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/go-kit/kit/metrics"
-	"time"
+	example "github.com/ppeymann/go_backend"
 )
 
 type instrumentingService struct {

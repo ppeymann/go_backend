@@ -1,9 +1,10 @@
 package account
 
 import (
-	example "expamle"
-	"expamle/validation"
+	example "github.com/ppeymann/go_backend"
+
 	"github.com/gin-gonic/gin"
+	"github.com/ppeymann/go_backend/validation"
 )
 
 type validationService struct {

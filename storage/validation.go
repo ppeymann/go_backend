@@ -2,10 +2,11 @@ package storage
 
 import (
 	"errors"
-	example "expamle"
-	"expamle/validation"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	example "github.com/ppeymann/go_backend"
+	"github.com/ppeymann/go_backend/validation"
 )
 
 type validationService struct {

@@ -1,11 +1,11 @@
 package services
 
 import (
-	example "expamle"
-	"expamle/postgres"
-	"expamle/storage"
 	kitLog "github.com/go-kit/kit/log"
 	kitprometheus "github.com/go-kit/kit/metrics/prometheus"
+	"github.com/ppeymann/go_backend"
+	"github.com/ppeymann/go_backend/postgres"
+	"github.com/ppeymann/go_backend/storage"
 	stdprometheus "github.com/prometheus/client_golang/prometheus"
 	"gorm.io/gorm"
 	"log"

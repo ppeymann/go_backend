@@ -1,9 +1,10 @@
 package server
 
 import (
-	example "expamle"
 	"fmt"
+
 	"github.com/gin-gonic/gin"
+	example "github.com/ppeymann/go_backend"
 )
 
 type accountHandler struct {
